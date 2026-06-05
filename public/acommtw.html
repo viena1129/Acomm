@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acomm - Precision Medical Manufacturing & Cable Solutions</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Inter & Space Grotesk -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+            display: ['Space Grotesk', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="min-h-screen bg-[#f7f9ff] text-[#161c23] antialiased flex flex-col justify-between">
+
+  <!-- Header / Navigation Bar -->
+  <header class="sticky top-0 bg-white/95 backdrop-blur-md border-b border-[#dde3ec] z-40 transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between">
+      <!-- Logo Branding -->
+      <a href="#" class="flex items-center gap-2.5 group cursor-pointer" onclick="switchTab('solutions')">
+        <span class="w-8 h-8 rounded-lg bg-gradient-to-tr from-[#0a2540] to-[#008080] flex items-center justify-center text-white font-extrabold text-sm tracking-tighter">Ac</span>
+        <div class="text-left font-display">
+          <span class="text-lg font-extrabold tracking-tight text-[#0a2540] group-hover:text-[#008080] transition-colors">ACOMM</span>
+          <span class="block text-[8px] font-bold text-gray-400 uppercase tracking-widest leading-none">Medical Care</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Tabs -->
+      <nav class="hidden md:flex items-center gap-1">
+        <button onclick="switchTab('solutions')" id="tab-solutions" class="tab-btn px-4 py-2 text-xs font-bold tracking-wider uppercase transition-all rounded-[4px] cursor-pointer hover:bg-gray-50 text-[#008080] bg-teal-50/50">
+          Solutions
+        </button>
+        <button onclick="switchTab('products')" id="tab-products" class="tab-btn px-4 py-2 text-xs font-bold tracking-wider uppercase transition-all rounded-[4px] cursor-pointer hover:bg-gray-50 text-gray-500">
+          Products
+        </button>
+        <button onclick="switchTab('capabilities')" id="tab-capabilities" class="tab-btn px-4 py-2 text-xs font-bold tracking-wider uppercase transition-all rounded-[4px] cursor-pointer hover:bg-gray-50 text-gray-500">
+          Capabilities
+        </button>
+        <button onclick="switchTab('contact')" id="tab-contact" class="tab-btn px-5 py-2 text-xs font-bold tracking-wider uppercase transition-all rounded-[4px] cursor-pointer bg-[#008080] text-white hover:bg-teal-700 ml-3">
+          Contact Us
+        </button>
+      </nav>
+
+      <!-- Mobile menu trigger -->
+      <button onclick="toggleMobileMenu()" class="md:hidden p-2 text-gray-500 hover:text-gray-800 focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile menu drop -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-[#dde3ec] px-4 py-3 space-y-2">
+      <button onclick="switchTab('solutions')" class="block w-full text-left px-3 py-2 text-sm font-bold text-gray-700 hover:bg-gray-50 rounded">Solutions</button>
+      <button onclick="switchTab('products')" class="block w-full text-left px-3 py-2 text-sm font-bold text-gray-700 hover:bg-gray-50 rounded">Products</button>
+      <button onclick="switchTab('capabilities')" class="block w-full text-left px-3 py-2 text-sm font-bold text-gray-700 hover:bg-gray-50 rounded">Capabilities</button>
+      <button onclick="switchTab('contact')" class="block w-full text-center px-3 py-2.5 text-sm font-bold bg-[#008080] text-white rounded">Contact Us</button>
+    </div>
+  </header>
+
+  <!-- Main Views Container -->
+  <main class="flex-grow">
+    
+    <!-- view: SOLUTIONS -->
+    <div id="view-solutions" class="view-panel transition-all duration-300">
+      <!-- 03. Technical Solutions style -->
+      <section class="py-16 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto border-b border-gray-200 text-left">
+        <div class="space-y-3 mb-8">
+          <h2 class="text-3xl font-extrabold font-display text-[#0A2540]">
+            Technical Solutions
+          </h2>
+          <p class="text-gray-500 font-sans text-sm max-w-2xl leading-relaxed">
+            Comprehensive technical services from CAD concept design to validated high mix manufacturing.
+          </p>
+        </div>
+
+        <div class="space-y-6">
+          <div class="space-y-6">
+            <div class="border-l-2 border-[#008080] pl-4 space-y-1">
+              <h3 class="font-sans font-bold text-xl text-[#0A2540]">
+                Design & Prototyping Capabilities
+              </h3>
+              <p class="text-gray-500 font-sans text-sm">
+                We turn complex design requirements into ultra-high-precision, manufacturing-ready industrial prototypes.
+              </p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+              <div class="bg-white border border-[#dde3ec]/70 rounded-lg p-4 shadow-xs hover:border-teal-500/50 hover:shadow-xs transition-all duration-300">
+                <h4 class="font-sans font-bold text-sm text-[#0A2540] mb-1 flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#008080]"></span>
+                  CAD Modeling & Prototyping
+                </h4>
+                <p class="text-xs text-gray-500 leading-relaxed font-sans">
+                  Precise 3D engineering files and functional simulations.
+                </p>
+              </div>
+              <div class="bg-white border border-[#dde3ec]/70 rounded-lg p-4 shadow-xs hover:border-teal-500/50 hover:shadow-xs transition-all duration-300">
+                <h4 class="font-sans font-bold text-sm text-[#0A2540] mb-1 flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#008080]"></span>
+                  Custom Overmold Tooling
+                </h4>
+                <p class="text-xs text-gray-500 leading-relaxed font-sans">
+                  Design optimized molds for superior product sealing.
+                </p>
+              </div>
+              <div class="bg-white border border-[#dde3ec]/70 rounded-lg p-4 shadow-xs hover:border-teal-500/50 hover:shadow-xs transition-all duration-300">
+                <h4 class="font-sans font-bold text-sm text-[#0A2540] mb-1 flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#008080]"></span>
+                  Rapid Turnaround Verification
+                </h4>
+                <p class="text-xs text-gray-500 leading-relaxed font-sans">
+                  Immediate physical validation and engineering iterations.
+                </p>
+              </div>
+              <div class="bg-white border border-[#dde3ec]/70 rounded-lg p-4 shadow-xs hover:border-teal-500/50 hover:shadow-xs transition-all duration-300">
+                <h4 class="font-sans font-bold text-sm text-[#0A2540] mb-1 flex items-center gap-2">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#008080]"></span>
+                  DFM Consultancy
+                </h4>
+                <p class="text-xs text-gray-500 leading-relaxed font-sans">
+                  Optimizing designs for high-integrity mass production.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 04. Integrated Services Grid Section (Image 2) -->
+      <section class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-left">
+        <div class="space-y-3 mb-12">
+          <h2 class="text-3xl font-extrabold font-display text-[#0A2540]">
+            Integrated Services
+          </h2>
+          <p class="text-gray-500 font-sans text-sm max-w-2xl leading-relaxed">
+            Providing engineering expertise across every stage of the medical device lifecycle.
+          </p>
+        </div>
+
+        <!-- 5 Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Card 1 -->
+          <div class="border border-[#dde3ec] p-8 rounded-lg flex flex-col justify-between bg-white text-gray-900 hover:border-teal-500 hover:shadow-md transition-all duration-300">
+            <div class="space-y-4">
+              <div class="flex justify-between items-start">
+                <div class="p-3 rounded-md bg-teal-50 text-[#008080]">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                  </svg>
+                </div>
+                <span class="font-mono text-xs font-semibold text-gray-400">01</span>
+              </div>
+              <h3 class="text-lg font-bold font-sans text-[#0A2540]">Design Consulting</h3>
+              <p class="text-xs leading-relaxed font-sans text-gray-500">
+                Translating your custom parameters into ready-for-tooling 3D CAD files.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="border border-[#dde3ec] p-8 rounded-lg flex flex-col justify-between bg-white text-gray-900 hover:border-teal-500 hover:shadow-md transition-all duration-300">
+            <div class="space-y-4">
+              <div class="flex justify-between items-start">
+                <div class="p-3 rounded-md bg-teal-50 text-[#008080]">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                </div>
+                <span class="font-mono text-xs font-semibold text-gray-400">02</span>
+              </div>
+              <h3 class="text-lg font-bold font-sans text-[#0A2540]">Prototyping Labs</h3>
+              <p class="text-xs leading-relaxed font-sans text-gray-500">
+                Quick custom test batches in actual grade silicone or overmolded pins.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 3 (Highlighted - Image 2 Blue) -->
+          <div class="border border-[#dde3ec] p-8 rounded-lg flex flex-col justify-between bg-[#0A2540] text-white border-transparent shadow-lg hover:shadow-xl transition-all duration-300">
+            <div class="space-y-4">
+              <div class="flex justify-between items-start">
+                <div class="p-3 rounded-md bg-white/10 text-teal-400">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 55 01-.586 1.414l-1.828 1.828A2 2 55 0111 14h-2a2 2 55 01-1.586-.586l-1.828-1.828A2 2 55 015 10.172V5L4 4" />
+                  </svg>
+                </div>
+                <span class="font-mono text-xs font-semibold text-teal-400">03</span>
+              </div>
+              <h3 class="text-lg font-bold font-sans text-white">Manufacturing Services</h3>
+              <p class="text-xs leading-relaxed font-sans text-gray-300">
+                Scalable, high-precision production for cable assembly and silicone molding components.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="border border-[#dde3ec] p-8 rounded-lg flex flex-col justify-between bg-white text-gray-900 hover:border-teal-500 hover:shadow-md transition-all duration-300">
+            <div class="space-y-4">
+              <div class="flex justify-between items-start">
+                <div class="p-3 rounded-md bg-teal-50 text-[#008080]">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                </div>
+                <span class="font-mono text-xs font-semibold text-gray-400">04</span>
+              </div>
+              <h3 class="text-lg font-bold font-sans text-[#0A2540]">Quality Testing</h3>
+              <p class="text-xs leading-relaxed font-sans text-gray-500"></p>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="border border-[#dde3ec] p-8 rounded-lg flex flex-col justify-between bg-white text-gray-900 hover:border-teal-500 hover:shadow-md transition-all duration-300">
+            <div class="space-y-4">
+              <div class="flex justify-between items-start">
+                <div class="p-3 rounded-md bg-teal-50 text-[#008080]">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <span class="font-mono text-xs font-semibold text-gray-400">05</span>
+              </div>
+              <h3 class="text-lg font-bold font-sans text-[#0A2540]">Value Added Services</h3>
+              <ul class="list-disc pl-5 space-y-1.5 text-xs font-sans text-gray-500">
+                <li>Plating & Painting</li>
+                <li>Secondary Manufacturing</li>
+                <li>Emergency Shipments</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- view: PRODUCTS -->
+    <div id="view-products" class="view-panel transition-all duration-300 hidden">
+      <div class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <!-- Page Header -->
+        <div class="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-6 mb-12 border-b border-gray-200 pb-8 text-left">
+          <div class="space-y-3">
+            <h1 class="text-3xl sm:text-4xl font-extrabold font-display text-[#0A2540]">
+              Product Showcase
+            </h1>
+            <p class="text-gray-500 font-sans text-sm sm:text-base max-w-xl">
+              Precision clinical components certified for high-stakes medical and diagnostic applications.
+            </p>
+          </div>
+        </div>
+
+        <!-- Product Display Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+          
+          <!-- Product 1 -->
+          <div class="bg-white border border-[#dde3ec] rounded-lg overflow-hidden flex flex-col justify-between shadow-xs hover:shadow-md hover:border-teal-500/30 transition-all duration-300">
+            <div class="bg-[#e8eef7]/20 p-6 border-b border-[#dde3ec] grid grid-cols-2 gap-4 min-h-[260px] items-center">
+              <div class="bg-white border border-[#dde3ec] rounded-md p-3 flex flex-col items-center justify-center relative shadow-xs group h-full">
+                <img src="./src/assets/images/regenerated_image_1780629994083.jpg" alt="Cable Assembly Style 1" class="max-h-40 object-contain rounded-sm transition-transform duration-300 group-hover:scale-105">
+              </div>
+              <div class="bg-white border border-[#dde3ec] rounded-md p-3 flex flex-col items-center justify-center relative shadow-xs group h-full">
+                <img src="./src/assets/images/regenerated_image_1780629994690.jpg" alt="Cable Assembly Style 2" class="max-h-40 object-contain rounded-sm transition-transform duration-300 group-hover:scale-105">
+              </div>
+            </div>
+            <div class="p-6 sm:p-8 space-y-6 text-left flex-grow flex flex-col justify-between">
+              <div class="space-y-4">
+                <div class="flex flex-wrap justify-between items-start gap-2">
+                  <h3 class="font-sans text-lg font-bold text-[#0A2540]">01. Cable Assembly</h3>
+                  <span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-teal-50 text-[#008080] uppercase">OEM/ODM CUSTOM</span>
+                </div>
+                <p class="text-gray-600 font-sans text-xs sm:text-sm leading-relaxed">
+                  Acomm specializes in OEM/ODM customized cable assemblies designed for patient monitoring and diagnostic equipment. Our assemblies prioritize signal integrity and durability in clinical environments.
+                </p>
+                <div class="pt-2 border-t border-gray-100 space-y-2">
+                  <div class="grid grid-cols-3 text-xs"><span class="font-bold text-gray-400">Application</span><span class="col-span-2 text-gray-700 font-medium">Patient monitoring, ECG, diagnostics</span></div>
+                  <div class="grid grid-cols-3 text-xs"><span class="font-bold text-gray-400">Leadwires</span><span class="col-span-2 text-gray-700 font-medium">Custom termination, overmolded connectors</span></div>
+                  <div class="grid grid-cols-3 text-xs"><span class="font-bold text-gray-400">Shielding</span><span class="col-span-2 text-gray-700 font-medium">Ultra-low noise, high-density Al-Mylar shield</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 2 -->
+          <div class="bg-white border border-[#dde3ec] rounded-lg overflow-hidden flex flex-col justify-between shadow-xs hover:shadow-md hover:border-teal-500/30 transition-all duration-300">
+            <div class="bg-[#e8eef7]/20 p-8 border-b border-[#dde3ec] flex items-center justify-center min-h-[260px]">
+              <img src="./src/assets/images/silicone_molding_product_1780628552069.png" alt="Neutral Electrode" class="max-h-56 object-contain rounded-md transition-transform duration-300 hover:scale-105">
+            </div>
+            <div class="p-6 sm:p-8 space-y-6 text-left flex-grow flex flex-col justify-between">
+              <div class="space-y-4">
+                <div class="flex flex-wrap justify-between items-start gap-2">
+                  <h3 class="font-sans text-lg font-bold text-[#0A2540]">02. Neutral Electrode</h3>
+                  <span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-teal-50 text-[#008080] uppercase">ISO 13485 CERTIFIED</span>
+                </div>
+                <p class="text-gray-600 font-sans text-xs sm:text-sm leading-relaxed">
+                  Our proprietary silicone molding process creates ultra-durable, biocompatible components designed for repeated sterilization. Ideal for grounding pads and surgical interface surfaces.
+                </p>
+                <div class="pt-2 border-t border-gray-100 space-y-2">
+                  <div class="grid grid-cols-3 text-xs"><span class="font-bold text-gray-400">Application</span><span class="col-span-2 text-gray-700 font-medium">Electrosurgical patient return plates</span></div>
+                  <div class="grid grid-cols-3 text-xs"><span class="font-bold text-gray-400">Material</span><span class="col-span-2 text-gray-700 font-medium">Medical-grade conductive silicone rubber</span></div>
+                  <div class="grid grid-cols-3 text-xs"><span class="font-bold text-gray-400">Features</span><span class="col-span-2 text-gray-700 font-medium">Uniform current distribution, low impedance</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 3 -->
+          <div class="bg-white border border-[#dde3ec] rounded-lg overflow-hidden flex flex-col justify-between shadow-xs hover:shadow-md hover:border-teal-500/30 transition-all duration-300">
+            <div class="bg-[#e8eef7]/20 p-8 border-b border-[#dde3ec] flex items-center justify-center min-h-[260px]">
+              <img src="./src/assets/images/regenerated_image_1780635281824.jpg" alt="Silicone Electrodes" class="max-h-56 object-contain rounded-md transition-transform duration-300 hover:scale-105">
+            </div>
+            <div class="p-6 sm:p-8 space-y-6 text-left flex-grow flex flex-col justify-between">
+              <div class="space-y-4">
+                <div class="flex flex-wrap justify-between items-start gap-2">
+                  <h3 class="font-sans text-lg font-bold text-[#0A2540]">03. Silicone Electrodes</h3>
+                  <span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-teal-50 text-[#008080] uppercase">BIO-COMPATIBLE</span>
+                </div>
+                <p class="text-gray-600 font-sans text-xs sm:text-sm leading-relaxed">
+                  High-durability medical-grade silicone electrodes for therapeutic applications.
+                </p>
+                <div class="pt-2 border-t border-gray-100 space-y-2">
+                  <div class="grid grid-cols-3 text-xs"><span class="font-bold text-gray-400">Application</span><span class="col-span-2 text-gray-700 font-medium">TENS, muscle stimulation (EMS)</span></div>
+                  <div class="grid grid-cols-3 text-xs"><span class="font-bold text-gray-400">Material</span><span class="col-span-2 text-gray-700 font-medium">Class VI pure carbon-silicone compound</span></div>
+                  <div class="grid grid-cols-3 text-xs"><span class="font-bold text-gray-400">Features</span><span class="col-span-2 text-gray-700 font-medium">High flexibility, uniform current coverage</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 4 -->
+          <div class="bg-white border border-[#dde3ec] rounded-lg overflow-hidden flex flex-col justify-between shadow-xs hover:shadow-md hover:border-teal-500/30 transition-all duration-300">
+            <div class="bg-[#e8eef7]/20 p-8 border-b border-[#dde3ec] flex items-center justify-center min-h-[260px]">
+              <img src="./src/assets/images/precision_harness_1780585702245.png" alt="Precision Harness" class="max-h-56 object-contain rounded-md transition-transform duration-300 hover:scale-105">
+            </div>
+            <div class="p-6 sm:p-8 space-y-6 text-left flex-grow flex flex-col justify-between">
+              <div class="space-y-4">
+                <div class="flex flex-wrap justify-between items-start gap-2">
+                  <h3 class="font-sans text-lg font-bold text-[#0A2540]">04. Precision Harness</h3>
+                  <span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-teal-50 text-[#008080] uppercase">HIGH QUALITY</span>
+                </div>
+                <p class="text-gray-600 font-sans text-xs sm:text-sm leading-relaxed">
+                  Multi-point signal cable for diagnostic equipment.
+                </p>
+                <div class="pt-2 border-t border-gray-100 space-y-2">
+                  <div class="grid grid-cols-3 text-xs"><span class="font-bold text-gray-400">Application</span><span class="col-span-2 text-gray-700 font-medium">Multi-point signaling, medical imaging</span></div>
+                  <div class="grid grid-cols-3 text-xs"><span class="font-bold text-gray-400">Connector</span><span class="col-span-2 text-gray-700 font-medium">Rugged circular multi-pin steel socket</span></div>
+                  <div class="grid grid-cols-3 text-xs"><span class="font-bold text-gray-400">Shielding</span><span class="col-span-2 text-gray-700 font-medium">Individually shielded twisted pairs</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- view: CAPABILITIES -->
+    <div id="view-capabilities" class="view-panel transition-all duration-300 hidden">
+      <div class="bg-[#f7f9ff] min-h-screen text-left">
+        <section class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+          <div class="max-w-3xl mb-12 space-y-4">
+            <h2 class="text-2xl sm:text-3xl font-extrabold font-display text-[#0A2540]">
+              Capabilities
+            </h2>
+            <p class="text-gray-500 font-sans text-base leading-relaxed">
+              Our cables designed to address unique operational requirements, ensuring reliable performance under varying conditions.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Cap 1 -->
+            <div class="bg-white border border-[#dde3ec] rounded-lg p-6 shadow-xs hover:shadow-md hover:border-teal-500/30 transition-all duration-300 flex flex-col justify-between">
+              <div class="space-y-4">
+                <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-teal-50 text-[#008080] font-mono text-xs font-bold border border-teal-200">01</span>
+                <h3 class="text-lg font-bold font-sans text-[#0A2540]">Power Cable Assemblies</h3>
+                <p class="text-sm font-sans text-gray-505 text-gray-500 leading-relaxed">
+                  High-reliability power transfer solutions engineered for stable voltage delivery and daily clinical usage.
+                </p>
+              </div>
+            </div>
+
+            <!-- Cap 2 -->
+            <div class="bg-white border border-[#dde3ec] rounded-lg p-6 shadow-xs hover:shadow-md hover:border-teal-500/30 transition-all duration-300 flex flex-col justify-between">
+              <div class="space-y-4">
+                <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-teal-50 text-[#008080] font-mono text-xs font-bold border border-teal-200">02</span>
+                <h3 class="text-lg font-bold font-sans text-[#0A2540]">Coaxial Cable Assemblies</h3>
+                <p class="text-sm font-sans text-gray-505 text-gray-500 leading-relaxed">
+                  Optimized for high-frequency signal integrity, low attenuation, and electromagnetic interference shielding.
+                </p>
+              </div>
+            </div>
+
+            <!-- Cap 3 -->
+            <div class="bg-white border border-[#dde3ec] rounded-lg p-6 shadow-xs hover:shadow-md hover:border-teal-500/30 transition-all duration-300 flex flex-col justify-between">
+              <div class="space-y-4">
+                <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-teal-50 text-[#008080] font-mono text-xs font-bold border border-teal-200">03</span>
+                <h3 class="text-lg font-bold font-sans text-[#0A2540]">Flat Ribbon Cable Assemblies</h3>
+                <p class="text-sm font-sans text-gray-505 text-gray-500 leading-relaxed">
+                  Space-saving high-density packaging for internal system routing and simplified diagnostic board connections.
+                </p>
+              </div>
+            </div>
+
+            <!-- Cap 4 -->
+            <div class="bg-white border border-[#dde3ec] rounded-lg p-6 shadow-xs hover:shadow-md hover:border-teal-500/30 transition-all duration-300 flex flex-col justify-between">
+              <div class="space-y-4">
+                <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-teal-50 text-[#008080] font-mono text-xs font-bold border border-teal-200">04</span>
+                <h3 class="text-lg font-bold font-sans text-[#0A2540]">Data Cable Assemblies</h3>
+                <p class="text-sm font-sans text-gray-505 text-gray-500 leading-relaxed">
+                  Premium quality connections tailored for IT infrastructure, telecommunications, and audiovisual systems.
+                </p>
+              </div>
+            </div>
+
+            <!-- Cap 5 -->
+            <div class="bg-white border border-[#dde3ec] rounded-lg p-6 shadow-xs hover:shadow-md hover:border-teal-500/30 transition-all duration-300 flex flex-col justify-between">
+              <div class="space-y-4">
+                <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-teal-50 text-[#008080] font-mono text-xs font-bold border border-teal-200">05</span>
+                <h3 class="text-lg font-bold font-sans text-[#0A2540]">Custom Cable Assemblies</h3>
+                <p class="text-sm font-sans text-gray-505 text-gray-500 leading-relaxed">
+                  Tailor-made cable integrations for various critical applications such as Medical, Automotive, and Automation industries.
+                </p>
+              </div>
+            </div>
+
+            <!-- Cap 6 -->
+            <div class="bg-white border border-[#dde3ec] rounded-lg p-6 shadow-xs hover:shadow-md hover:border-teal-500/30 transition-all duration-300 flex flex-col justify-between">
+              <div class="space-y-4">
+                <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-teal-50 text-[#008080] font-mono text-xs font-bold border border-teal-200">06</span>
+                <h3 class="text-lg font-bold font-sans text-[#0A2540]">Customized Silicone Molding</h3>
+                <p class="text-sm font-sans text-gray-505 text-gray-500 leading-relaxed">
+                  Biocompatible material molding, overmolding, protective strain reliefs, and custom medical-grade interfaces.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- view: CONTACT -->
+    <div id="view-contact" class="view-panel transition-all duration-300 hidden">
+      <div class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 max-w-6xl mx-auto items-start">
+          
+          <!-- Call-to-action left side -->
+          <div class="lg:col-span-5 space-y-8 text-left">
+            <div class="space-y-4">
+              <span class="text-[#008080] font-display text-xs font-bold tracking-wider uppercase">Contact sales</span>
+              <h2 class="text-3xl font-extrabold font-display text-[#0A2540] tracking-tight">Let's build reliable connections together</h2>
+              <p class="text-gray-500 font-sans text-sm leading-relaxed">
+                Connect with our technical staff. We offer technical evaluations, custom pricing matrices, and sample diagnostic validations.
+              </p>
+            </div>
+            
+            <div class="space-y-6 pt-4 border-t border-gray-200">
+              <div class="flex items-start gap-4">
+                <div class="p-2 sm:p-2.5 bg-teal-50 rounded-lg text-[#008080]">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <div class="text-left">
+                  <h4 class="font-sans font-extrabold text-xs text-[#0a2540] uppercase tracking-wider">Email Inquiry / 公司信箱</h4>
+                  <a href="mailto:sales@acommtw.com" class="text-sm font-sans font-semibold text-[#008080] hover:underline">sales@acommtw.com</a>
+                </div>
+              </div>
+              
+              <div class="flex items-start gap-4">
+                <div class="p-2 sm:p-2.5 bg-teal-50 rounded-lg text-[#008080]">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                </div>
+                <div class="text-left">
+                  <h4 class="font-sans font-extrabold text-xs text-[#0a2540] uppercase tracking-wider">Manufacturing Base / 工廠位置</h4>
+                  <p class="text-sm font-sans text-gray-600 font-medium">New Taipei City, Taiwan (台灣新北市)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dynamic Contact Submission Box -->
+          <div class="lg:col-span-7 bg-white border border-[#dde3ec] rounded-xl p-6 sm:p-10 shadow-sm">
+            
+            <!-- Success Screen -->
+            <div id="contact-success" class="hidden py-16 flex flex-col items-center justify-center text-center space-y-4">
+              <div class="w-16 h-16 bg-emerald-50 flex items-center justify-center rounded-full text-emerald-600 border border-emerald-100">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 class="font-sans font-extrabold text-emerald-600 text-2xl tracking-tight">
+                sent successfully
+              </h3>
+            </div>
+
+            <!-- Main Form -->
+            <form id="contact-form" onsubmit="submitContactForm(event)" class="space-y-6 font-sans">
+              <!-- Access Key for Web3Forms -->
+              <input type="hidden" name="access_key" value="73d950e5-5491-4f71-8f8a-8a5cba0cb7b9">
+              <input type="hidden" name="subject" value="New Inquiry via Acomm Static Landing Page">
+              <!-- Botcheck parameter for spam protection -->
+              <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+              <h3 class="text-lg font-bold text-[#0A2540] text-left border-b border-gray-100 pb-3">Submit Inquiry / 填寫諮詢表單</h3>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div class="space-y-1.5 text-left">
+                  <label class="text-[11px] font-bold text-[#0A2540] uppercase tracking-wide">First Name / 名字 <span class="text-red-500">*</span></label>
+                  <input type="text" name="first_name" required class="w-full bg-[#fcfdff] border border-[#dde3ec] rounded-[4px] px-3 py-2 text-xs font-medium focus:outline-none focus:border-[#008080] focus:ring-1 focus:ring-[#008080]">
+                </div>
+                <div class="space-y-1.5 text-left">
+                  <label class="text-[11px] font-bold text-[#0A2540] uppercase tracking-wide">Last Name / 姓氏 <span class="text-red-500">*</span></label>
+                  <input type="text" name="last_name" required class="w-full bg-[#fcfdff] border border-[#dde3ec] rounded-[4px] px-3 py-2 text-xs font-medium focus:outline-none focus:border-[#008080] focus:ring-1 focus:ring-[#008080]">
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div class="space-y-1.5 text-left">
+                  <label class="text-[11px] font-bold text-[#0A2540] uppercase tracking-wide">Company / 公司名稱</label>
+                  <input type="text" name="company" class="w-full bg-[#fcfdff] border border-[#dde3ec] rounded-[4px] px-3 py-2 text-xs font-medium focus:outline-none focus:border-[#008080] focus:ring-1 focus:ring-[#008080]">
+                </div>
+                <div class="space-y-1.5 text-left">
+                  <label class="text-[11px] font-bold text-[#0A2540] uppercase tracking-wide">Business Email / 聯絡信箱 <span class="text-red-500">*</span></label>
+                  <input type="email" name="email" required class="w-full bg-[#fcfdff] border border-[#dde3ec] rounded-[4px] px-3 py-2 text-xs font-medium focus:outline-none focus:border-[#008080] focus:ring-1 focus:ring-[#008080]">
+                </div>
+              </div>
+
+              <div class="space-y-1.5 text-left">
+                <label class="text-[11px] font-bold text-[#0A2540] uppercase tracking-wide">Phone Number / 聯絡電話</label>
+                <input type="tel" name="phone" class="w-full bg-[#fcfdff] border border-[#dde3ec] rounded-[4px] px-3 py-2 text-xs font-medium focus:outline-none focus:border-[#008080] focus:ring-1 focus:ring-[#008080]">
+              </div>
+
+              <div class="space-y-1.5 text-left">
+                <label class="text-[11px] font-bold text-[#0A2540] uppercase tracking-wide">Specification Requirements or Questions / 需求及規格說明 <span class="text-red-500">*</span></label>
+                <textarea name="message" required rows="4" placeholder="Please double check your parameters before transmission..." class="w-full bg-[#fcfdff] border border-[#dde3ec] rounded-[4px] px-3 py-2 text-xs font-medium focus:outline-none focus:border-[#008080] focus:ring-1 focus:ring-[#008080] font-mono"></textarea>
+              </div>
+
+              <button type="submit" id="submit-button" class="w-full bg-[#008080] hover:bg-teal-700 text-white font-bold text-xs uppercase py-3 rounded-[4px] shadow-sm transition-all duration-150 transform hover:scale-[1.01] active:scale-95 cursor-pointer flex items-center justify-center gap-2">
+                <span id="button-text">Submit Inquiry / 送出諮詢表單</span>
+                <span id="loading-spinner" class="hidden inline-block w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer Navigation -->
+  <footer class="bg-[#0A2540] text-gray-400 py-12 px-4 sm:px-6 lg:px-8 border-t border-[#113154]">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 items-start text-left">
+      <div class="space-y-3">
+        <div class="flex items-center gap-2">
+          <span class="w-6 h-6 rounded-md bg-[#008080] flex items-center justify-center text-white font-extrabold text-xs">Ac</span>
+          <span class="text-white font-bold font-display text-base tracking-tight">ACOMM</span>
+        </div>
+        <p class="text-xs text-gray-400 font-sans leading-relaxed">
+          OEM/ODM Precision Cable Assembly and Customized Conductive Silicone Components. ISO 13485 Registered Medical Excellence from Taiwan.
+        </p>
+      </div>
+
+      <div class="space-y-2">
+        <h4 class="text-white text-xs font-extrabold uppercase tracking-widest font-display">Navigation</h4>
+        <div class="flex flex-col gap-2 font-sans text-xs">
+          <a href="#" onclick="switchTab('solutions')" class="hover:text-white transition-colors">Solutions</a>
+          <a href="#" onclick="switchTab('products')" class="hover:text-white transition-colors">Products</a>
+          <a href="#" onclick="switchTab('capabilities')" class="hover:text-white transition-colors">Capabilities</a>
+          <a href="#" onclick="switchTab('contact')" class="hover:text-white transition-colors">Contact Us</a>
+        </div>
+      </div>
+
+      <div class="space-y-2">
+        <h4 class="text-white text-xs font-extrabold uppercase tracking-widest font-display">Technical Inquiries</h4>
+        <p class="text-xs text-gray-400 leading-relaxed font-sans">
+          Email: <a href="mailto:sales@acommtw.com" class="text-teal-400 hover:underline">sales@acommtw.com</a>
+        </p>
+        <p class="text-xs text-gray-500 font-mono text-[10px]">
+          © 2026 ACOMM CO., LTD. 版權所有
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SPA Javascript Logic -->
+  <script>
+    // Tab switching handler
+    function switchTab(tabId) {
+      // Hide all panels
+      const panels = document.querySelectorAll('.view-panel');
+      panels.forEach(panel => panel.classList.add('hidden'));
+
+      // Show requested panel
+      const targetPanel = document.getElementById('view-' + tabId);
+      if (targetPanel) {
+        targetPanel.classList.remove('hidden');
+      }
+
+      // De-activate all navigation buttons
+      const buttons = document.querySelectorAll('.tab-btn');
+      buttons.forEach(btn => {
+        btn.className = "tab-btn px-4 py-2 text-xs font-bold tracking-wider uppercase transition-all rounded-[4px] cursor-pointer hover:bg-gray-50 text-gray-500";
+      });
+
+      // Special handling for the active style
+      const activeBtn = document.getElementById('tab-' + tabId);
+      if (activeBtn) {
+        if (tabId === 'contact') {
+          activeBtn.className = "tab-btn px-5 py-2 text-xs font-bold tracking-wider uppercase transition-all rounded-[4px] cursor-pointer bg-[#008080] text-white hover:bg-teal-700 ml-3";
+        } else {
+          activeBtn.className = "tab-btn px-4 py-2 text-xs font-bold tracking-wider uppercase transition-all rounded-[4px] cursor-pointer hover:bg-gray-50 text-[#008080] bg-teal-50/50";
+        }
+      }
+
+      // Close mobile menu if open
+      document.getElementById('mobile-menu').classList.add('hidden');
+
+      // Scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Toggle Mobile Navigation
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    }
+
+    // Submit inquiry through AJAX dynamically
+    function submitContactForm(e) {
+      e.preventDefault();
+      
+      const form = document.getElementById('contact-form');
+      const submitButton = document.getElementById('submit-button');
+      const buttonText = document.getElementById('button-text');
+      const spinner = document.getElementById('loading-spinner');
+      const successDiv = document.getElementById('contact-success');
+
+      // Disable inputs and show loading state
+      submitButton.disabled = true;
+      buttonText.innerText = "Transmitting / 發送中...";
+      spinner.classList.remove('hidden');
+
+      const formData = new FormData(form);
+      const jsonObject = {};
+      formData.forEach((value, key) => {
+        // Map fields to look clean in Web3Forms email
+        jsonObject[key] = value;
+      });
+
+      // Fetch POST to Web3Forms API
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(jsonObject)
+      })
+      .then(async (response) => {
+        const result = await response.json();
+        if (response.status === 200 || result.success) {
+          // Hide form, show only 'sent successfully' and nothing else
+          form.classList.add('hidden');
+          successDiv.classList.remove('hidden');
+        } else {
+          alert("Submission failed. Please email us directly at sales@acommtw.com");
+          resetSubmitButton();
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+        alert("Network error. Please email us directly at sales@acommtw.com");
+        resetSubmitButton();
+      });
+
+      function resetSubmitButton() {
+        submitButton.disabled = false;
+        buttonText.innerText = "Submit Inquiry / 送出諮詢表單";
+        spinner.classList.add('hidden');
+      }
+    }
+  </script>
+</body>
+</html>

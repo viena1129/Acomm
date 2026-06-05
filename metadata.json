@@ -1,0 +1,6 @@
+{
+  "name": "Acomm Precision MedTech",
+  "description": "Premium portal presenting Acomm's world-class medical manufacturing, custom cable assemblies, silicone molding, and R&D design solutions.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
